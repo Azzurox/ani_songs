@@ -11,6 +11,7 @@ gem 'jbuilder',     '2.7.0'
 gem 'bootstrap', '~> 4.1.1'
 gem 'paperclip'
 gem 'mini_magick'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
