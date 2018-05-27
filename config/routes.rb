@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'songs#home'
+  get 'songs/new'
+
+  root 'songs#show'
 
   get '/about', to: 'static_pages#about'
 
