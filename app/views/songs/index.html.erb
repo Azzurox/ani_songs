@@ -1,0 +1,19 @@
+<% provide(:title, "Accueil") %>
+
+<div class="center jumbotron">
+  <h2>
+    Vous n'êtes jamais d'accord avec vos amis sur les meilleures musiques d'animes sorties cette saison ? Votez pour vos musiques d'animes
+	préférées et découvrez les plus populaires de la saison ! 
+  </h2>
+  <%= link_to "M'inscrire!", root_path, class: "btn btn-lg btn-primary" %>
+</div>
+
+<h1>Toutes les chansons de la saison</h1>
+
+<ul class="songs">
+  <% @songs.each do |song| %>
+    <li>
+      <%= link_to song.name, song %>, <%= song.artist %>, <%= song.anime %>, <%= song.nbre_vote %>
+    </li>
+  <% end %>
+</ul>

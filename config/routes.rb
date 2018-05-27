@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  get 'songs/new'
 
-  root 'songs#show'
+  get '/newsong', to: 'songs#new'
+
+  root 'songs#index'
 
   get '/about', to: 'static_pages#about'
 
+  resources :songs
+  
 end
