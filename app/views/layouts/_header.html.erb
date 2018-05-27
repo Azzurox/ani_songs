@@ -1,12 +1,23 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top ">
   <div class="container">
-    <%= link_to "AniSongs!", root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right navbar-light">
-        <li><%= link_to "Accueil",   root_path %></li>
-        <li><%= link_to "A Propos",   about_path %></li>
-        <li><%= link_to "Log in", '#' %></li>
-      </ul>
-    </nav>
+  <ul class="nav navbar-nav pull-sm-left">
+  <li class="nav-item active" id="logo">
+  <%= link_to "AniSongs",   root_path, class: "nav-link" %>
+  </li>
+  </ul>
+  <ul class="navbar-nav pull-sm-right">
+    <li class="nav-item">
+      <%= link_to "Accueil",   root_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "A Propos",   about_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Log In",   "#", class: "nav-link" %>
+    </li>
+  </ul>
   </div>
+</nav>
+</div>
 </header>

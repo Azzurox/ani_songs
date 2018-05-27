@@ -8,12 +8,27 @@
   <%= link_to "M'inscrire!", root_path, class: "btn btn-lg btn-primary" %>
 </div>
 
-<h1>Toutes les chansons de la saison</h1>
+<style>
+    .card-custom {
+        max-width: 200px;
+    }
+</style>
 
-<ul class="songs">
+<h1>Toutes les chansons de la saison</h1>
+<div class="container">
+   <div class="row mt-5">
   <% @songs.each do |song| %>
-    <li>
-      <%= link_to song.name, song %>, <%= song.artist %>, <%= song.anime %>, <%= song.nbre_vote %>
-    </li>
+    <div class="card card-custom mx-2 mb-3" >
+		<%= link_to song do %>
+		<%= image_tag song.photo.url, size: "200x200", class: "card-img-top" %>
+		<% end %>
+		<div class="card-body">
+			<h4 class="card-title"><%= song.name %></h4>
+			<p class="card-text"><%= song.anime %></p>
+		</div>
+	</div>
+        
   <% end %>
-</ul>
+
+</div>
+</div>
