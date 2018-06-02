@@ -12,6 +12,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'paperclip'
 gem 'rails_12factor'
 gem 'bcrypt'
+gem 'rails-controller-testing'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

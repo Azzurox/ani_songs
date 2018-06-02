@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'users/new'
 
   root 'songs#index'
 
@@ -15,6 +14,8 @@ Rails.application.routes.draw do
   resources :songs
   
   resources :users
+  
+  post '/signup',  to: 'users#create'
   
   
 end
