@@ -13,6 +13,7 @@ gem 'paperclip'
 gem 'rails_12factor'
 gem 'bcrypt'
 gem 'rails-controller-testing'
+gem 'acts_as_votable', '~> 0.11.1'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

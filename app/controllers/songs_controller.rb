@@ -1,4 +1,7 @@
 class SongsController < ApplicationController
+
+  before_action :set_event, only: [ :upvote ]
+  
   def new
 	@song = Song.new
   end
@@ -17,7 +20,19 @@ class SongsController < ApplicationController
   end
   
   def index
-	@songs = Song.all
+	@songs = Song.all.order(:cached_votes_up => :desc)
+  end
+  
+  def upvote
+	@song.upvote_from current_user
+	respond_to do |format|
+    format.html { redirect_to :back }
+    format.js
+    end
+  end
+  
+  def set_event
+	@song = Song.find(params[:id])
   end
   
    def song_params

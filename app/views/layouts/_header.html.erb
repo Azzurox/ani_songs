@@ -11,13 +11,28 @@
       <%= link_to "Accueil",   root_path, class: "nav-link" %>
     </li>
     <li class="nav-item">
-      <%= link_to "A Propos",   about_path, class: "nav-link" %>
+      <%= link_to "À Propos",   about_path, class: "nav-link" %>
     </li>
-    <li class="nav-item">
-      <%= link_to "Log In",   "#", class: "nav-link" %>
-    </li>
+	 <% if logged_in? %>
+     <li><%= link_to "Utilisateurs", '#', class: "nav-link" %></li>
+	 <li class="dropdown nav-item">
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+              Mon Compte
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Mon Profil", current_user %></li>
+              <li><%= link_to "Mes Paramètres", '#' %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Me déconnecter", logout_path, method: :delete %>
+              </li>
+            </ul>
+     </li>
+     <% else %>
+        <li class="nav-item"><%= link_to "Me connecter", login_path, class: "nav-link" %></li>
+     <% end %>
   </ul>
-  </div>
+ </div>
 </nav>
 </div>
 </header>

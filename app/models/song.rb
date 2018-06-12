@@ -1,4 +1,6 @@
 class Song < ApplicationRecord
+
+  acts_as_votable
   validates :name, presence: true, length: { maximum: 50 }, uniqueness: {case_sensitive: false}
   validates :artist, presence: true, length: { maximum: 40 }
   validates :anime, presence: true, length: { maximum: 100 }

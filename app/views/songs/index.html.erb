@@ -22,9 +22,20 @@
 		<%= link_to song do %>
 		<%= image_tag song.photo.url, size: "200x200", class: "card-img-top" %>
 		<% end %>
-		<div class="card-body">
+		<div class="card-body d-flex flex-column ">
 			<h4 class="card-title"><%= song.name %></h4>
 			<p class="card-text"><%= song.anime %></p>
+			<% if logged_in? %>
+				<% if current_user.voted_on?(song) %>
+					<%= link_to like_song_path(song), id: "upvote_#{song.id}", method: :put, class: "btn btn-danger btn-lg mt-auto round", remote: true do %>
+					<span class="glyphicon glyphicon-thumbs-up"></span> J'aime
+					<% end %>
+				<% else %>
+					<%= link_to like_song_path(song), id: "upvote_#{song.id}", method: :put, class: "btn btn-outline-danger btn-lg mt-auto round", remote: true do %>
+					<span class="glyphicon glyphicon-thumbs-up"></span> J'aime
+					<% end %>
+				<% end %>
+			<% end %>
 		</div>
 	</div>
         
